@@ -1,0 +1,18 @@
+﻿@using Microsoft.AspNetCore.Components;
+@using GenericEvent.Shared.Models;
+
+
+
+
+<CascadingValue Value="@this">
+
+</CascadingValue>
+
+
+@functions{
+
+    [Parameter]
+    public EventCallback<EventArguments> EventTwo { get; set; }
+
+
+}

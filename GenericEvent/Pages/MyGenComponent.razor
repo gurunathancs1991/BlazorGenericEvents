@@ -1,0 +1,18 @@
+@using GenericEvent.Shared.Models;
+
+@typeparam T;
+
+    <div>
+        <ul>
+            @ChildContent
+        </ul>
+    </div>
+
+
+@functions {
+    [Parameter]
+    protected RenderFragment ChildContent { get; set; }
+
+    [Parameter]
+    public IEnumerable<T> Data { get; set; }
+}

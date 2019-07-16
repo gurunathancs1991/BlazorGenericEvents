@@ -1,0 +1,26 @@
+﻿@page "/"
+@using GenericEvent.Shared.Models;
+@inject IJSRuntime jsruntime;
+
+<MyGenComponent Data="@MyData">
+    <Events>
+        <NonGenericEvents EventTwo="@Event2"></NonGenericEvents>
+        <GenericEvents EventOne="@EventOne"></GenericEvents>
+    </Events>
+
+</MyGenComponent>
+
+@functions {
+    public List<string> MyData = new List<string>() { "a", "b", "c", "d" };
+
+    public void Event2(EventArguments args)
+    {
+
+    }
+
+    public async Task EventOne(EventArgsData<string> data)
+    {
+        //dummy call
+        await jsruntime.InvokeAsync<string>("call");
+    }
+}

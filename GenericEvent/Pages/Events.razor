@@ -1,0 +1,22 @@
+﻿@using Microsoft.AspNetCore.Components;
+
+@inherits ComponentBase
+
+
+
+<CascadingValue Value="@this">
+    @ChildContent
+</CascadingValue>
+
+@functions{
+
+    [Parameter]
+    protected RenderFragment ChildContent { get; set; }
+
+    public GenericEvents<object> GenEvents { get; set; }
+
+    public NonGenericEvents NonGenEvents { get; set; }
+
+
+
+}

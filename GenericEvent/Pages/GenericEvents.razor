@@ -1,0 +1,18 @@
+﻿@using Microsoft.AspNetCore.Components;
+@using GenericEvent.Shared.Models;
+
+
+@typeparam TValue
+
+
+<CascadingValue Value="@this">
+
+</CascadingValue>
+
+
+@functions{
+   
+  [Parameter]
+    public EventCallback<EventArgsData<TValue>> EventOne { get; set; }
+
+}
